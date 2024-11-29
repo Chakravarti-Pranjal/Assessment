@@ -24,19 +24,16 @@ const Navbar = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ShopLogo</span>
         </a>
 
-        {/* Navbar Icons (Cart, Wishlist, Profile) */}
         <div className="flex items-center space-x-3 rtl:space-x-reverse md:order-2">
           {/* Wishlist Icon */}
           <a href="/wishlist" className="hidden md:block text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500">
             <IoHeartSharp />
           </a>
 
-          {/* Shopping Cart Icon */}
           <a href="/cart" className="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-500">
             <FaShoppingCart />
           </a>
 
-          {/* User Button */}
           <button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -91,7 +88,6 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Hamburger Menu Button */}
           <button
             data-collapse-toggle="navbar-user"
             type="button"
@@ -134,30 +130,7 @@ const Navbar = () => {
                 Home
               </a>
             </li>
-            <li>
-              <a
-                href="/shop"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Shop
-              </a>
-            </li>
-            <li>
-              <a
-                href="/categories"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Categories
-              </a>
-            </li>
-            <li>
-              <a
-                href="/deals"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Deals
-              </a>
-            </li>
+            
             <li>
               <a
                 href="/contact"

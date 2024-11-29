@@ -1,29 +1,28 @@
-import Navbar from './components/Navbar'
-import Login from './components/Login'
-import Footer from './components/Footer'
-import ProductCard from './components/ProductCard'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import Login from './components/Login';
+import Home from './components/Home';
+import PrivateRoute from './components/PrivateRoute';
 
 const App = () => {
-  return (
-    <div className='bg-gray-400'>
-       <Navbar />
-          <div className='flex flex-wrap items-center justify-center lg:gap-10 lg:mx-4 my-10   gap-3 mx-2 '>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
 
-          </div>
-         
-       <Footer />
-    </div>
-  )
-}
+                <Route
+                    path="/home"
+                    element={
+                        <PrivateRoute isAuthenticated={isAuthenticated}>
+                            <Home />
+                        </PrivateRoute>
+                    }
+                />
+            </Routes>
+        </Router>
+    );
+};
 
-export default App
+export default App;
